@@ -15,6 +15,9 @@ import Laravel from "./page/language/Laravel";
 import Python from "./page/language/Python";
 import Git from "./page/language/Git";
 import { Routes, Route } from "react-router-dom";
+import AkisSorular from "./page/main/Akis/content/sorular";
+import AkisCevaplar from "./page/main/Akis/content/Cevaplar";
+import AkisMakaleler from "./page/main/Akis/content/makaleler";
 
 function Main({ style }) {
   return (
@@ -22,7 +25,11 @@ function Main({ style }) {
       <Sidebar style={style} />
       <Routes>
         <Route path='/' element={<Anasayfa />} />
-        <Route path='akis' element={<Akis />} />
+        <Route path='akis' element={<Akis />}>
+          <Route exact path='/akis' element={<AkisSorular />} />
+          <Route path='cevaplar' element={<AkisCevaplar />} />
+          <Route path='makaleler' element={<AkisMakaleler />} />
+        </Route>
         <Route path='kesfet' element={<Kesfet />} />
         <Route path='makaleler' element={<Makaleler />} />
         <Route path='soru-cevap' element={<SoruCevap />} />

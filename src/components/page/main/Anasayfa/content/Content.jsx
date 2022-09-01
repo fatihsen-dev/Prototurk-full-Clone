@@ -11,7 +11,7 @@ import Telegram from "../social/Telegram";
 function Content() {
   return (
     <div className='overflow-auto h-full w-full flex-1 flex flex-col items-start pb-10 px-5 2xl:px-40 xl:px-24 lg:px-14 md:px-5 sm:px-5'>
-      <div className='flex-1 flex flex-col items-start container mx-auto gap-2'>
+      <div className='flex-1 flex flex-col items-start container mx-auto gap-2 py-8'>
         <HeaderText
           HText='Kendine değer kat!'
           descText="İyi bir kariyer için, doğru bir başlangıç gerekir. Prototürk'de bir çok

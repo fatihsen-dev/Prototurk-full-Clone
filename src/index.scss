@@ -53,45 +53,59 @@ body,
 
 //***********************************************
 
-.home-page-list-name.active {
+.home-page-list-item.active {
   background-color: rgba(243, 244, 244, 0.7);
   color: #32445a;
 }
-.home-page-list-name:hover {
+.home-page-list-item:hover {
   background-color: rgba(243, 244, 244, 0.7);
 }
 
 //***********************************************
 
-.side-bar-language-list-item.html.active {
+.sidebar-language-list-item.html.active {
   background-color: #fdede9;
   color: #e54d27;
 }
-.side-bar-language-list-item.css.active {
+.sidebar-language-list-item.css.active {
   background-color: #eaf6fc;
   color: #29a4d9;
 }
-.side-bar-language-list-item.javascript.active {
+.sidebar-language-list-item.javascript.active {
   background-color: #fffce9;
   color: #f7df1e;
 }
-.side-bar-language-list-item.php.active {
+.sidebar-language-list-item.php.active {
   background-color: #f1f2f7;
   color: #7478ae;
 }
-.side-bar-language-list-item.mysql.active {
+.sidebar-language-list-item.mysql.active {
   background-color: #ecf2f6;
   color: #4479a1;
 }
-.side-bar-language-list-item.laravel.active {
+.sidebar-language-list-item.laravel.active {
   background-color: #ffeae9;
   color: #ff2d20;
 }
-.side-bar-language-list-item.python.active {
+.sidebar-language-list-item.python.active {
   background-color: #ebf1f6;
   color: #3372a5;
 }
-.side-bar-language-list-item.git.active {
+.sidebar-language-list-item.git.active {
   background-color: #ffedea;
   color: #f74e28;
+}
+
+//***********************************************
+
+.akis-navbabar {
+  & > a {
+    transition: 0.15s;
+    border-bottom: 4px solid transparent;
+    padding-bottom: 5px;
+    &.active {
+      border-bottom: 4px solid #32445a;
+      color: #32445a;
+    }
+  }
 }

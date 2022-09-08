@@ -1,7 +1,7 @@
 import React from "react";
 import LiItem from "./LiItem";
 
-function Sidebar({ style }) {
+function Sidebar({ style, ActiveSidebar }) {
   return (
     <div
       className='overflow-auto border-r scroll-m-1 border-gray-100 hidden flex-col p-3 text-[#32445a] 2xl:flex xl:flex lg:flex md:hidden sm:hidden 2xl:relative xl:relative lg:!w-[285px] lg:!relative sm:absolute md:absolute justify-between h-full'
@@ -9,63 +9,89 @@ function Sidebar({ style }) {
     >
       <div>
         <ul className='flex flex-col gap-1'>
-          <LiItem name='home-page-list-name' location='' text='Anasayfa' />
-          <LiItem name='home-page-list-name' location='akis' text='Akış' />
-          <LiItem name='home-page-list-name' location='kesfet' text='Keşfet' />
           <LiItem
-            name='home-page-list-name'
+            ActiveSidebar={ActiveSidebar}
+            name='all-sidebar-item home-page-list-item'
+            location=''
+            text='Anasayfa'
+          />
+          <LiItem
+            ActiveSidebar={ActiveSidebar}
+            name='all-sidebar-item home-page-list-item'
+            location='akis'
+            text='Akış'
+          />
+          <LiItem
+            ActiveSidebar={ActiveSidebar}
+            name='all-sidebar-item home-page-list-item'
+            location='kesfet'
+            text='Keşfet'
+          />
+          <LiItem
+            ActiveSidebar={ActiveSidebar}
+            name='all-sidebar-item home-page-list-item'
             location='makaleler'
             text='Makaleler'
           />
           <LiItem
-            name='home-page-list-name'
+            ActiveSidebar={ActiveSidebar}
+            name='all-sidebar-item home-page-list-item'
             location='soru-cevap'
             text='Soru & Cevap'
           />
           <LiItem
-            name='home-page-list-name'
+            ActiveSidebar={ActiveSidebar}
+            name='all-sidebar-item home-page-list-item'
             location='ders-istekleri'
             text='Ders İstekleri'
           />
         </ul>
         <ul className='mt-10 mb-4 flex flex-col gap-1'>
           <LiItem
-            name='side-bar-language-list-item html'
+            ActiveSidebar={ActiveSidebar}
+            name='all-sidebar-item sidebar-language-list-item html'
             location='html'
             text='HTML'
           />
           <LiItem
-            name='side-bar-language-list-item css'
+            ActiveSidebar={ActiveSidebar}
+            name='all-sidebar-item sidebar-language-list-item css'
             location='css'
             text='CSS'
           />
           <LiItem
-            name='side-bar-language-list-item javascript'
+            ActiveSidebar={ActiveSidebar}
+            name='all-sidebar-item sidebar-language-list-item javascript'
             location='javascript'
             text='Javascript'
           />
           <LiItem
-            name='side-bar-language-list-item php'
+            ActiveSidebar={ActiveSidebar}
+            name='all-sidebar-item sidebar-language-list-item php'
             location='php'
             text='PHP'
           />
           <LiItem
-            name='side-bar-language-list-item mysql'
+            ActiveSidebar={ActiveSidebar}
+            name='all-sidebar-item sidebar-language-list-item mysql'
             location='mysql'
             text='MySQL'
           />
           <LiItem
-            name='side-bar-language-list-item laravel'
+            ActiveSidebar={ActiveSidebar}
+            name='all-sidebar-item sidebar-language-list-item laravel'
             location='laravel'
             text='Laravel'
           />
           <LiItem
-            name='side-bar-language-list-item python'
+            ActiveSidebar={ActiveSidebar}
+            name='all-sidebar-item sidebar-language-list-item python'
             location='python'
             text='Python'
           />
           <LiItem
-            name='side-bar-language-list-item git'
+            ActiveSidebar={ActiveSidebar}
+            name='all-sidebar-item sidebar-language-list-item git'
             location='git'
             text='Git'
           />

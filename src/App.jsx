@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./index.scss";
 import Navbar from "./components/navbar/Navbar";
 import Main from "./components/Main";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter } from "react-router-dom";
 
 function App() {
   const [activeSidebar, setActiveSidebar] = useState("active");
@@ -23,7 +23,7 @@ function App() {
     <BrowserRouter>
       <div className='h-full flex flex-col'>
         <Navbar ActiveSidebar={ActiveSidebar} />
-        <Main style={style} />
+        <Main style={style} ActiveSidebar={ActiveSidebar} />
       </div>
     </BrowserRouter>
   );

@@ -13,7 +13,7 @@ function NewEducationItem({
     <div className='flex justify-center w-full h-full overflow-hidden'>
       <a
         href='#'
-        className='flex bg-white border rounded-sm h-full w-full gap-1 flex-col z-10 select-none p-5'
+        className='flex bg-white dark:bg-darkTwo dark:border-dark border rounded-sm h-full w-full gap-1 flex-col z-10 select-none p-5'
       >
         <div>
           <p
@@ -24,10 +24,10 @@ function NewEducationItem({
           </p>
         </div>
         <div>
-          <p className='text-ellipsis overflow-hidden whitespace-nowrap text-xl font-medium text-neutral-800'>
+          <p className='text-ellipsis dark:text-white overflow-hidden whitespace-nowrap text-xl font-medium text-neutral-800'>
             {title}
           </p>
-          <p className='text-sm text-gray-500/60'>{time}</p>
+          <p className='text-sm text-gray-500/60 dark:text-white/50'>{time}</p>
         </div>
         <div className='flex gap-1 items-center mt-2'>
           <img

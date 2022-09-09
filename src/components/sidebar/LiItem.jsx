@@ -1,12 +1,12 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 
-function LiItem({ text, location, name, ActiveSidebar }) {
+function LiItem({ text, location, name, deAktiveSidebar }) {
   return (
     <li className='flex'>
       <NavLink
-        onClick={ActiveSidebar}
-        className={`${name} bg-white px-3 w-full py-[6px] rounded-[3px] font-medium transition-colors cursor-pointer select-none text-[15px] text-black`}
+        onClick={deAktiveSidebar}
+        className={`${name} px-3 w-full py-[6px] rounded-[3px] font-medium transition-colors cursor-pointer select-none text-[15px] text-black dark:text-white`}
         to={`${location}`}
       >
         {text}

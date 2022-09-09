@@ -1,46 +1,61 @@
 import React from "react";
 import LiItem from "./LiItem";
 
-function Sidebar({ style, ActiveSidebar }) {
+function Sidebar({ style, deAktiveSidebar, darkTheme, setDarkTheme }) {
+  const themeBtnFn = () => {
+    setDarkTheme(darkTheme == "light" ? "dark" : "light");
+    localStorage.setItem(
+      "prototurkTheme",
+      darkTheme == "light" ? "dark" : "light"
+    );
+    if (darkTheme == "light") {
+      document.body.classList.remove("dark");
+      document.body.classList.add("light");
+    } else if (darkTheme == "dark") {
+      document.body.classList.remove("light");
+      document.body.classList.add("dark");
+    }
+    deAktiveSidebar();
+  };
   return (
     <div
-      className='overflow-auto border-r scroll-m-1 border-gray-100 hidden flex-col p-3 text-[#32445a] 2xl:flex xl:flex lg:flex md:hidden sm:hidden 2xl:relative xl:relative lg:!w-[285px] lg:!relative sm:absolute md:absolute justify-between h-full'
+      className='dark:bg-dark bg-white dark:border-darkBorder overflow-auto border-r scroll-m-1 border-gray-100 hidden flex-col p-3 text-mainGray 2xl:flex xl:flex lg:flex md:hidden sm:hidden 2xl:relative xl:relative lg:!w-[250px] lg:!relative sm:absolute md:absolute justify-between h-full'
       style={style}
     >
       <div>
-        <ul className='flex flex-col gap-1'>
+        <ul className='flex flex-col gap-1.5'>
           <LiItem
-            ActiveSidebar={ActiveSidebar}
+            deAktiveSidebar={deAktiveSidebar}
             name='all-sidebar-item home-page-list-item'
             location=''
             text='Anasayfa'
           />
           <LiItem
-            ActiveSidebar={ActiveSidebar}
+            deAktiveSidebar={deAktiveSidebar}
             name='all-sidebar-item home-page-list-item'
             location='akis'
             text='Akış'
           />
           <LiItem
-            ActiveSidebar={ActiveSidebar}
+            deAktiveSidebar={deAktiveSidebar}
             name='all-sidebar-item home-page-list-item'
             location='kesfet'
             text='Keşfet'
           />
           <LiItem
-            ActiveSidebar={ActiveSidebar}
+            deAktiveSidebar={deAktiveSidebar}
             name='all-sidebar-item home-page-list-item'
             location='makaleler'
             text='Makaleler'
           />
           <LiItem
-            ActiveSidebar={ActiveSidebar}
+            deAktiveSidebar={deAktiveSidebar}
             name='all-sidebar-item home-page-list-item'
             location='soru-cevap'
             text='Soru & Cevap'
           />
           <LiItem
-            ActiveSidebar={ActiveSidebar}
+            deAktiveSidebar={deAktiveSidebar}
             name='all-sidebar-item home-page-list-item'
             location='ders-istekleri'
             text='Ders İstekleri'
@@ -48,49 +63,49 @@ function Sidebar({ style, ActiveSidebar }) {
         </ul>
         <ul className='mt-10 mb-4 flex flex-col gap-1'>
           <LiItem
-            ActiveSidebar={ActiveSidebar}
+            deAktiveSidebar={deAktiveSidebar}
             name='all-sidebar-item sidebar-language-list-item html'
             location='html'
             text='HTML'
           />
           <LiItem
-            ActiveSidebar={ActiveSidebar}
+            deAktiveSidebar={deAktiveSidebar}
             name='all-sidebar-item sidebar-language-list-item css'
             location='css'
             text='CSS'
           />
           <LiItem
-            ActiveSidebar={ActiveSidebar}
+            deAktiveSidebar={deAktiveSidebar}
             name='all-sidebar-item sidebar-language-list-item javascript'
             location='javascript'
             text='Javascript'
           />
           <LiItem
-            ActiveSidebar={ActiveSidebar}
+            deAktiveSidebar={deAktiveSidebar}
             name='all-sidebar-item sidebar-language-list-item php'
             location='php'
             text='PHP'
           />
           <LiItem
-            ActiveSidebar={ActiveSidebar}
+            deAktiveSidebar={deAktiveSidebar}
             name='all-sidebar-item sidebar-language-list-item mysql'
             location='mysql'
             text='MySQL'
           />
           <LiItem
-            ActiveSidebar={ActiveSidebar}
+            deAktiveSidebar={deAktiveSidebar}
             name='all-sidebar-item sidebar-language-list-item laravel'
             location='laravel'
             text='Laravel'
           />
           <LiItem
-            ActiveSidebar={ActiveSidebar}
+            deAktiveSidebar={deAktiveSidebar}
             name='all-sidebar-item sidebar-language-list-item python'
             location='python'
             text='Python'
           />
           <LiItem
-            ActiveSidebar={ActiveSidebar}
+            deAktiveSidebar={deAktiveSidebar}
             name='all-sidebar-item sidebar-language-list-item git'
             location='git'
             text='Git'
@@ -98,16 +113,20 @@ function Sidebar({ style, ActiveSidebar }) {
         </ul>
       </div>
       <div className='flex flex-col'>
-        <button className='bg-[#32445a] p-2 mx-1 rounded font-medium text-white flex justify-center items-center'>
+        <button className='bg-mainGray p-2 mx-1 rounded font-medium text-white flex justify-center items-center'>
           Uyhulamayı Yükle
         </button>
-        <button className='bg-neutral-900 mt-2 mx-1 font-medium text-white fill-white flex p-2 rounded items-center gap-1'>
+        <button
+          onClick={themeBtnFn}
+          className='bg-neutral-900 dark:bg-white dark:text-neutral-900 mt-2 mx-1 font-medium text-white fill-white flex p-2 rounded items-center gap-1 justify-center'
+        >
           <svg
             viewBox='0 0 24 24'
             width='24'
             height='24'
             preserveAspectRatio='xMidYMid meet'
             focusable='false'
+            className='dark:fill-neutral-900'
           >
             <g className='style-scope yt-icon'>
               <path
@@ -116,7 +135,7 @@ function Sidebar({ style, ActiveSidebar }) {
               ></path>
             </g>
           </svg>
-          Koyu mod
+          {darkTheme == "dark" ? <span> Açık mod</span> : <span>Koyu mod</span>}
         </button>
       </div>
     </div>

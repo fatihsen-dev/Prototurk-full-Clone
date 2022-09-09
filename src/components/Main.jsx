@@ -2,10 +2,15 @@ import Sidebar from "./sidebar/Sidebar";
 import routes from "../routes/routes";
 import { useRoutes } from "react-router-dom";
 
-function Main({ style, ActiveSidebar }) {
+function Main({ style, deAktiveSidebar, darkTheme, setDarkTheme }) {
   return (
     <div className='main flex-1 flex relative'>
-      <Sidebar style={style} ActiveSidebar={ActiveSidebar} />
+      <Sidebar
+        darkTheme={darkTheme}
+        setDarkTheme={setDarkTheme}
+        style={style}
+        deAktiveSidebar={deAktiveSidebar}
+      />
       {useRoutes(routes)}
     </div>
   );

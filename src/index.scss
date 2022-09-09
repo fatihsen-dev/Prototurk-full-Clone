@@ -20,7 +20,7 @@
 html,
 body,
 #root {
-  height: 100%;
+  @apply h-full;
 }
 
 //***********************************************
@@ -37,9 +37,11 @@ body,
 }
 ::-webkit-scrollbar-track {
   background: #edf2f7;
+  @apply dark:bg-[#242526];
 }
 ::-webkit-scrollbar-thumb {
   background: #d4dfeb;
+  @apply dark:bg-[#353738];
 }
 ::-webkit-scrollbar-thumb:hover {
   background: #a0aec0;
@@ -49,6 +51,7 @@ body,
 
 .swiper-pagination-bullet-active {
   background-color: #32445a !important;
+  @apply dark:bg-[#2d88ff] #{!important};
 }
 
 //***********************************************
@@ -60,52 +63,132 @@ body,
 .home-page-list-item:hover {
   background-color: rgba(243, 244, 244, 0.7);
 }
+body.dark .home-page-list-item.active {
+  background-color: #1c2f48;
+}
+body.dark .home-page-list-item.active:hover {
+  background-color: #1c2f48;
+}
+body.dark .home-page-list-item:hover {
+  background-color: #252525;
+}
 
 //***********************************************
 
-.sidebar-language-list-item.html.active {
+.sidebar-language-list-item.active {
   background-color: #fdede9;
-  color: #e54d27;
 }
-.sidebar-language-list-item.css.active {
-  background-color: #eaf6fc;
-  color: #29a4d9;
+body.dark .sidebar-language-list-item:hover {
+  background-color: #252525;
 }
-.sidebar-language-list-item.javascript.active {
-  background-color: #fffce9;
-  color: #f7df1e;
+.sidebar-language-list-item {
+  &:hover {
+    background-color: rgba(243, 244, 244, 0.7);
+  }
+  &.html.active {
+    background-color: rgba(229, 77, 39, 0.1);
+    color: #e54d27;
+  }
+  &.css.active {
+    background-color: rgba(41, 164, 217, 0.1);
+    color: #29a4d9;
+  }
+  &.javascript.active {
+    background-color: rgba(247, 223, 30, 0.1);
+    color: #f7df1e;
+  }
+  &.php.active {
+    background-color: rgba(116, 120, 174, 0.1);
+    color: #7478ae;
+  }
+  &.mysql.active {
+    background-color: rgba(68, 121, 161, 0.1);
+    color: #4479a1;
+  }
+  &.laravel.active {
+    background-color: rgba(255, 45, 32, 0.1);
+    color: #ff2d20;
+  }
+  &.python.active {
+    background-color: rgba(51, 114, 165, 0.1);
+    color: #3372a5;
+  }
+  &.git.active {
+    background-color: rgba(247, 78, 40, 0.1);
+    color: #f74e28;
+  }
 }
-.sidebar-language-list-item.php.active {
-  background-color: #f1f2f7;
-  color: #7478ae;
-}
-.sidebar-language-list-item.mysql.active {
-  background-color: #ecf2f6;
-  color: #4479a1;
-}
-.sidebar-language-list-item.laravel.active {
-  background-color: #ffeae9;
-  color: #ff2d20;
-}
-.sidebar-language-list-item.python.active {
-  background-color: #ebf1f6;
-  color: #3372a5;
-}
-.sidebar-language-list-item.git.active {
-  background-color: #ffedea;
-  color: #f74e28;
+body.dark .sidebar-language-list-item {
+  color: #fff;
+  &.html.active {
+    background-color: rgba(229, 77, 39, 0.2);
+  }
+  &.css.active {
+    background-color: rgba(41, 164, 217, 0.2);
+  }
+  &.javascript.active {
+    background-color: rgba(247, 223, 30, 0.2);
+  }
+  &.php.active {
+    background-color: rgba(116, 120, 174, 0.2);
+  }
+  &.mysql.active {
+    background-color: rgba(68, 121, 161, 0.2);
+  }
+  &.laravel.active {
+    background-color: rgba(255, 45, 32, 0.2);
+  }
+  &.python.active {
+    background-color: rgba(51, 114, 165, 0.2);
+  }
+  &.git.active {
+    background-color: rgba(247, 78, 40, 0.2);
+  }
 }
 
 //***********************************************
 
 .akis-navbabar {
   & > a {
-    transition: 0.15s;
-    border-bottom: 4px solid transparent;
-    padding-bottom: 5px;
+    @apply my-4 border-b-4 border-transparent pb-[5px] transition-colors;
     &.active {
-      border-bottom: 4px solid #32445a;
-      color: #32445a;
+      @apply border-b-mainGray text-mainGray;
     }
   }
 }
+body.dark .akis-navbabar {
+  & > a.active {
+    @apply border-mainBlue text-mainBlue;
+  }
+}
+
+//***********************************************
+
+body.dark .langSwiper {
+  .html {
+    background-color: rgba(229, 77, 39, 0.2) !important;
+  }
+  .css {
+    background-color: rgba(41, 164, 217, 0.2) !important;
+  }
+  .javascript {
+    background-color: rgba(247, 223, 30, 0.2) !important;
+  }
+  .php {
+    background-color: rgba(116, 120, 174, 0.2) !important;
+  }
+  .mysql {
+    background-color: rgba(68, 121, 161, 0.2) !important;
+  }
+  .laravel {
+    background-color: rgba(255, 45, 32, 0.2) !important;
+  }
+  .python {
+    background-color: rgba(51, 114, 165, 0.2) !important;
+  }
+  .git {
+    background-color: rgba(247, 78, 40, 0.2) !important;
+  }
+}
+
+//***********************************************

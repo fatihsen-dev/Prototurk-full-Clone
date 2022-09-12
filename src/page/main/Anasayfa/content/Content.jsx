@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import LangSwiper from "../swiper/langSwiper/LangSwiper";
 import NewPostSwiper from "../swiper/commentSwiper/NewPostSwiper";
 import NewEducation from "../swiper/NewEducation/NewEducation";
@@ -9,6 +9,9 @@ import Twitter from "../social/Twitter";
 import Telegram from "../social/Telegram";
 
 function Content() {
+  useEffect(() => {
+    document.title = "𝗣𝗥𝗢𝗧𝗢𝗧𝗨𝗥𝗞 | Yazılım ve Tasarım Dersleri";
+  }, []);
   return (
     <div className='dark:bg-dark overflow-auto h-full w-full flex-1 flex flex-col items-start pb-10 px-5 2xl:px-40 xl:px-24 lg:px-14 md:px-5 sm:px-5'>
       <div className='flex-1 flex flex-col items-start container mx-auto gap-2 py-8'>

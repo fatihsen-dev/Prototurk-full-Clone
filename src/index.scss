@@ -51,7 +51,7 @@ body,
 
 .swiper-pagination-bullet-active {
   background-color: #32445a !important;
-  @apply dark:bg-[#2d88ff] #{!important};
+  @apply dark:bg-mainBlue #{!important};
 }
 
 //***********************************************
@@ -86,63 +86,57 @@ body.dark .sidebar-language-list-item:hover {
     background-color: rgba(243, 244, 244, 0.7);
   }
   &.html.active {
-    background-color: rgba(229, 77, 39, 0.1);
-    color: #e54d27;
+    @apply bg-html/20 text-html #{!important};
   }
   &.css.active {
-    background-color: rgba(41, 164, 217, 0.1);
-    color: #29a4d9;
+    @apply bg-css/20 text-css #{!important};
   }
   &.javascript.active {
-    background-color: rgba(247, 223, 30, 0.1);
-    color: #f7df1e;
+    @apply bg-javascript/20 text-javascript #{!important};
   }
   &.php.active {
-    background-color: rgba(116, 120, 174, 0.1);
-    color: #7478ae;
+    @apply bg-php/20 text-php #{!important};
   }
   &.mysql.active {
-    background-color: rgba(68, 121, 161, 0.1);
-    color: #4479a1;
+    @apply bg-mysql/20 text-mysql #{!important};
   }
   &.laravel.active {
-    background-color: rgba(255, 45, 32, 0.1);
-    color: #ff2d20;
+    @apply bg-laravel/20 text-laravel #{!important};
   }
   &.python.active {
-    background-color: rgba(51, 114, 165, 0.1);
-    color: #3372a5;
+    @apply bg-python/20 text-python #{!important};
   }
   &.git.active {
-    background-color: rgba(247, 78, 40, 0.1);
-    color: #f74e28;
+    @apply bg-git/20 text-git #{!important};
   }
 }
 body.dark .sidebar-language-list-item {
-  color: #fff;
+  &.active {
+    @apply text-white #{!important};
+  }
   &.html.active {
-    background-color: rgba(229, 77, 39, 0.2);
+    @apply bg-html/20 #{!important};
   }
   &.css.active {
-    background-color: rgba(41, 164, 217, 0.2);
+    @apply bg-css/20 #{!important};
   }
   &.javascript.active {
-    background-color: rgba(247, 223, 30, 0.2);
+    @apply bg-javascript/20 #{!important};
   }
   &.php.active {
-    background-color: rgba(116, 120, 174, 0.2);
+    @apply bg-php/20 #{!important};
   }
   &.mysql.active {
-    background-color: rgba(68, 121, 161, 0.2);
+    @apply bg-mysql/20 #{!important};
   }
   &.laravel.active {
-    background-color: rgba(255, 45, 32, 0.2);
+    @apply bg-laravel/20 #{!important};
   }
   &.python.active {
-    background-color: rgba(51, 114, 165, 0.2);
+    @apply bg-python/20 #{!important};
   }
   &.git.active {
-    background-color: rgba(247, 78, 40, 0.2);
+    @apply bg-git/20 #{!important};
   }
 }
 
@@ -166,29 +160,56 @@ body.dark .akis-navbabar {
 
 body.dark .langSwiper {
   .html {
-    background-color: rgba(229, 77, 39, 0.2) !important;
+    @apply bg-html/20 #{!important};
   }
   .css {
-    background-color: rgba(41, 164, 217, 0.2) !important;
+    @apply bg-css/20 #{!important};
   }
   .javascript {
-    background-color: rgba(247, 223, 30, 0.2) !important;
+    @apply bg-javascript/20 #{!important};
   }
   .php {
-    background-color: rgba(116, 120, 174, 0.2) !important;
+    @apply bg-php/20 #{!important};
   }
   .mysql {
-    background-color: rgba(68, 121, 161, 0.2) !important;
+    @apply bg-mysql/20 #{!important};
   }
   .laravel {
-    background-color: rgba(255, 45, 32, 0.2) !important;
+    @apply bg-laravel/20 #{!important};
   }
   .python {
-    background-color: rgba(51, 114, 165, 0.2) !important;
+    @apply bg-python/20 #{!important};
   }
   .git {
-    background-color: rgba(247, 78, 40, 0.2) !important;
+    @apply bg-git/20 #{!important};
   }
 }
 
 //***********************************************
+
+.lang-headerText {
+  &.html {
+    @apply bg-html text-white;
+  }
+  &.css {
+    @apply bg-css text-white;
+  }
+  &.javascript {
+    @apply bg-javascript text-black;
+  }
+  &.php {
+    @apply bg-php text-white;
+  }
+  &.mysql {
+    @apply bg-mysql text-white;
+  }
+  &.laravel {
+    @apply bg-laravel text-white;
+  }
+  &.python {
+    @apply bg-python text-white;
+  }
+  &.git {
+    @apply bg-git text-white;
+  }
+}

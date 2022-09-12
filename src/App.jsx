@@ -45,6 +45,7 @@ function App() {
           deAktiveSidebar={deAktiveSidebar}
         />
       </div>
+      {/* <div className='absolute w-full h-full inset-0 z-20 bg-black/50'></div> */}
     </BrowserRouter>
   );
 }

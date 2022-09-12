@@ -11,7 +11,7 @@ function Posts() {
               className='border p-3 dark:border-darkBorder rounded-sm'
               key={index}
             >
-              <div>
+              <div className='flex flex-col gap-1'>
                 <div className='gap-2 flex flex-col 2xl:flex-row xl:flex-row lg:flex-row md:flex-col sm:flex-col'>
                   <a className='inline-flex items-center gap-2 ' href='#'>
                     <img
@@ -36,7 +36,7 @@ function Posts() {
                 </q>
               </div>
               <a
-                className='flex flex-col 2xl:flex-row xl:flex-row lg:flex-row md:flex-col sm:flex-col bg-lightGreen p-3 dark:bg-darkBlueThree rounded-sm items-center gap-3'
+                className='flex mt-1 flex-col 2xl:flex-row xl:flex-row lg:flex-row md:flex-col sm:flex-col bg-lightGreen p-3 dark:bg-darkBlueThree rounded-sm items-center gap-3'
                 href={data.url}
                 target='_blank'
               >

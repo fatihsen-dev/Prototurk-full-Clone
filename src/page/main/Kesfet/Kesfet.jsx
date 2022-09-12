@@ -1,8 +1,11 @@
 import React, { useEffect } from "react";
-import { useState } from "react";
 import Posts from "./Posts";
+import { useContext } from "react";
+import mainContext from "../../../context/mainContext";
 
 function Kesfet() {
+  const { setActivePopup } = useContext(mainContext);
+
   useEffect(() => {
     document.title = "Keşfet | PROTOTURK";
   }, []);
@@ -22,7 +25,10 @@ function Kesfet() {
             başkalarıyla paylaşın. Keşfedilmeyi bekleyen binlerce link var,
             hazırsan maceraya başlıyoruz!
           </p>
-          <button className='bg-mainGray dark:bg-mainBlue text-white font-medium rounded py-2 px-4'>
+          <button
+            onClick={() => setActivePopup(true)}
+            className='bg-mainGray dark:bg-mainBlue text-white font-medium rounded py-2 px-4'
+          >
             Link Paylaş
           </button>
           <span className='flex w-10 h-10 bg-gray-100 left-0 top-1 absolute -skew-x-[45deg] rotate-[90deg] -z-10 dark:bg-darkBlueTwo dark:z-[1]'></span>

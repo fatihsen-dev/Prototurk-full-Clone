@@ -1,7 +1,10 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+import { useContext } from "react";
+import mainContext from "../../context/mainContext";
 
-function LiItem({ text, location, name, deAktiveSidebar }) {
+function LiItem({ text, location, name }) {
+  const { deAktiveSidebar } = useContext(mainContext);
   return (
     <li className='flex'>
       <NavLink

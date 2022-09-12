@@ -1,7 +1,11 @@
 import React from "react";
+import { useContext } from "react";
 import { NavLink } from "react-router-dom";
+import mainContext from "../../context/mainContext";
 
-function Navbar({ ActiveSidebar }) {
+function Navbar() {
+  const { ActiveSidebar } = useContext(mainContext);
+
   return (
     <div className='bg-white dark:bg-dark dark:border-darkBorder h-[60px] flex items-center justify-between px-5 border-b border-gray-100'>
       <button

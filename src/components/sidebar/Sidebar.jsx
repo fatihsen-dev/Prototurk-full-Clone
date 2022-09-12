@@ -1,7 +1,12 @@
 import React from "react";
 import LiItem from "./LiItem";
+import { useContext } from "react";
+import mainContext from "../../context/mainContext";
 
-function Sidebar({ style, deAktiveSidebar, darkTheme, setDarkTheme }) {
+function Sidebar() {
+  const { setDarkTheme, deAktiveSidebar, darkTheme, style } =
+    useContext(mainContext);
+
   const themeBtnFn = () => {
     setDarkTheme(darkTheme == "light" ? "dark" : "light");
     localStorage.setItem(
@@ -25,37 +30,31 @@ function Sidebar({ style, deAktiveSidebar, darkTheme, setDarkTheme }) {
       <div>
         <ul className='flex flex-col gap-1.5'>
           <LiItem
-            deAktiveSidebar={deAktiveSidebar}
             name='all-sidebar-item home-page-list-item'
             location=''
             text='Anasayfa'
           />
           <LiItem
-            deAktiveSidebar={deAktiveSidebar}
             name='all-sidebar-item home-page-list-item'
             location='akis'
             text='Akış'
           />
           <LiItem
-            deAktiveSidebar={deAktiveSidebar}
             name='all-sidebar-item home-page-list-item'
             location='kesfet'
             text='Keşfet'
           />
           <LiItem
-            deAktiveSidebar={deAktiveSidebar}
             name='all-sidebar-item home-page-list-item'
             location='makaleler'
             text='Makaleler'
           />
           <LiItem
-            deAktiveSidebar={deAktiveSidebar}
             name='all-sidebar-item home-page-list-item'
             location='soru-cevap'
             text='Soru & Cevap'
           />
           <LiItem
-            deAktiveSidebar={deAktiveSidebar}
             name='all-sidebar-item home-page-list-item'
             location='ders-istekleri'
             text='Ders İstekleri'
@@ -63,49 +62,41 @@ function Sidebar({ style, deAktiveSidebar, darkTheme, setDarkTheme }) {
         </ul>
         <ul className='mt-10 mb-4 flex flex-col gap-1'>
           <LiItem
-            deAktiveSidebar={deAktiveSidebar}
             name='all-sidebar-item sidebar-language-list-item html'
             location='html'
             text='HTML'
           />
           <LiItem
-            deAktiveSidebar={deAktiveSidebar}
             name='all-sidebar-item sidebar-language-list-item css'
             location='css'
             text='CSS'
           />
           <LiItem
-            deAktiveSidebar={deAktiveSidebar}
             name='all-sidebar-item sidebar-language-list-item javascript'
             location='javascript'
             text='Javascript'
           />
           <LiItem
-            deAktiveSidebar={deAktiveSidebar}
             name='all-sidebar-item sidebar-language-list-item php'
             location='php'
             text='PHP'
           />
           <LiItem
-            deAktiveSidebar={deAktiveSidebar}
             name='all-sidebar-item sidebar-language-list-item mysql'
             location='mysql'
             text='MySQL'
           />
           <LiItem
-            deAktiveSidebar={deAktiveSidebar}
             name='all-sidebar-item sidebar-language-list-item laravel'
             location='laravel'
             text='Laravel'
           />
           <LiItem
-            deAktiveSidebar={deAktiveSidebar}
             name='all-sidebar-item sidebar-language-list-item python'
             location='python'
             text='Python'
           />
           <LiItem
-            deAktiveSidebar={deAktiveSidebar}
             name='all-sidebar-item sidebar-language-list-item git'
             location='git'
             text='Git'

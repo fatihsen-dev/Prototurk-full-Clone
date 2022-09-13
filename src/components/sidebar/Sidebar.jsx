@@ -4,8 +4,13 @@ import { useContext } from "react";
 import mainContext from "../../context/mainContext";
 
 function Sidebar() {
-  const { setDarkTheme, deAktiveSidebar, darkTheme, style } =
-    useContext(mainContext);
+  const {
+    setDarkTheme,
+    deAktiveSidebar,
+    darkTheme,
+    style,
+    activeSoruCevapSidebar,
+  } = useContext(mainContext);
 
   const themeBtnFn = () => {
     setDarkTheme(darkTheme == "light" ? "dark" : "light");
@@ -27,82 +32,125 @@ function Sidebar() {
       className='dark:bg-dark bg-white dark:border-darkBorder overflow-auto border-r scroll-m-1 border-gray-100 hidden flex-col p-3 text-mainGray 2xl:flex xl:flex lg:flex md:hidden sm:hidden 2xl:relative xl:relative lg:!w-[250px] lg:!relative sm:absolute md:absolute justify-between h-full'
       style={style}
     >
-      <div>
-        <ul className='flex flex-col gap-1.5'>
-          <LiItem
-            name='all-sidebar-item home-page-list-item'
-            location=''
-            text='Anasayfa'
-          />
-          <LiItem
-            name='all-sidebar-item home-page-list-item'
-            location='akis'
-            text='Akış'
-          />
-          <LiItem
-            name='all-sidebar-item home-page-list-item'
-            location='kesfet'
-            text='Keşfet'
-          />
-          <LiItem
-            name='all-sidebar-item home-page-list-item'
-            location='makaleler'
-            text='Makaleler'
-          />
-          <LiItem
-            name='all-sidebar-item home-page-list-item'
-            location='soru-cevap'
-            text='Soru & Cevap'
-          />
-          <LiItem
-            name='all-sidebar-item home-page-list-item'
-            location='ders-istekleri'
-            text='Ders İstekleri'
-          />
-        </ul>
-        <ul className='mt-10 mb-4 flex flex-col gap-1'>
-          <LiItem
-            name='all-sidebar-item sidebar-language-list-item html'
-            location='html'
-            text='HTML'
-          />
-          <LiItem
-            name='all-sidebar-item sidebar-language-list-item css'
-            location='css'
-            text='CSS'
-          />
-          <LiItem
-            name='all-sidebar-item sidebar-language-list-item javascript'
-            location='javascript'
-            text='Javascript'
-          />
-          <LiItem
-            name='all-sidebar-item sidebar-language-list-item php'
-            location='php'
-            text='PHP'
-          />
-          <LiItem
-            name='all-sidebar-item sidebar-language-list-item mysql'
-            location='mysql'
-            text='MySQL'
-          />
-          <LiItem
-            name='all-sidebar-item sidebar-language-list-item laravel'
-            location='laravel'
-            text='Laravel'
-          />
-          <LiItem
-            name='all-sidebar-item sidebar-language-list-item python'
-            location='python'
-            text='Python'
-          />
-          <LiItem
-            name='all-sidebar-item sidebar-language-list-item git'
-            location='git'
-            text='Git'
-          />
-        </ul>
-      </div>
+      {activeSoruCevapSidebar == false ? (
+        <div>
+          <ul className='flex flex-col gap-1.5'>
+            <LiItem
+              name='all-sidebar-item home-page-list-item'
+              location=''
+              text='Anasayfa'
+            />
+            <LiItem
+              name='all-sidebar-item home-page-list-item'
+              location='akis'
+              text='Akış'
+            />
+            <LiItem
+              name='all-sidebar-item home-page-list-item'
+              location='kesfet'
+              text='Keşfet'
+            />
+            <LiItem
+              name='all-sidebar-item home-page-list-item'
+              location='makaleler'
+              text='Makaleler'
+            />
+            <LiItem
+              name='all-sidebar-item home-page-list-item'
+              location='soru-cevap'
+              text='Soru & Cevap'
+            />
+            <LiItem
+              name='all-sidebar-item home-page-list-item'
+              location='ders-istekleri'
+              text='Ders İstekleri'
+            />
+          </ul>
+          <ul className='mt-10 mb-4 flex flex-col gap-1'>
+            <LiItem
+              name='all-sidebar-item sidebar-language-list-item html'
+              location='html'
+              text='HTML'
+            />
+            <LiItem
+              name='all-sidebar-item sidebar-language-list-item css'
+              location='css'
+              text='CSS'
+            />
+            <LiItem
+              name='all-sidebar-item sidebar-language-list-item javascript'
+              location='javascript'
+              text='Javascript'
+            />
+            <LiItem
+              name='all-sidebar-item sidebar-language-list-item php'
+              location='php'
+              text='PHP'
+            />
+            <LiItem
+              name='all-sidebar-item sidebar-language-list-item mysql'
+              location='mysql'
+              text='MySQL'
+            />
+            <LiItem
+              name='all-sidebar-item sidebar-language-list-item laravel'
+              location='laravel'
+              text='Laravel'
+            />
+            <LiItem
+              name='all-sidebar-item sidebar-language-list-item python'
+              location='python'
+              text='Python'
+            />
+            <LiItem
+              name='all-sidebar-item sidebar-language-list-item git'
+              location='git'
+              text='Git'
+            />
+          </ul>
+        </div>
+      ) : (
+        <div>
+          <ul className='flex flex-col gap-1.5 w-full'>
+            <LiItem
+              name='all-sidebar-item home-page-list-item'
+              location='soru-cevap'
+              text='Son Sorular'
+            />
+            <LiItem
+              name='all-sidebar-item home-page-list-item'
+              location='cevaplanmamis-sorular'
+              text='Cevaplanmamış Sorular'
+            />
+            <LiItem
+              name='all-sidebar-item home-page-list-item'
+              location='cozulmemis-sorular'
+              text='Çözülmemiş Sorular'
+            />
+            <LiItem
+              name='all-sidebar-item home-page-list-item'
+              location='kategoriler'
+              text='Kategoriler'
+            />
+            <LiItem
+              name='all-sidebar-item home-page-list-item'
+              location='populer-sorular'
+              text='Popüler'
+            />
+            <hr className="my-3 border-black/5 dark:border-white/10"/>
+            <LiItem
+              name='all-sidebar-item home-page-list-item'
+              location='takip-ettigim-sorular'
+              text='Size Özel Sorular'
+            />
+            <LiItem
+              name='all-sidebar-item home-page-list-item'
+              location='favori-sorular'
+              text='Favorileriniz'
+            />
+          </ul>
+        </div>
+      )}
       <div className='flex flex-col'>
         <button className='bg-mainGray p-2 mx-1 rounded font-medium text-white flex justify-center items-center'>
           Uyhulamayı Yükle

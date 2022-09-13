@@ -33,7 +33,6 @@ function Kesfet() {
           </button>
           <span className='flex w-10 h-10 bg-gray-100 left-0 top-1 absolute -skew-x-[45deg] rotate-[90deg] -z-10 dark:bg-darkBlueTwo dark:z-[1]'></span>
         </div>
-        <div></div>
         <Posts />
       </div>
     </div>

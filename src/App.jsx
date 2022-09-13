@@ -12,6 +12,7 @@ function App() {
   const [activePopup, setActivePopup] = useState(false);
   const [activeSidebar, setActiveSidebar] = useState("active");
   const [style, setStyle] = useState({});
+  const [activeSoruCevapSidebar, setActiveSoruCevapSidebar] = useState(false);
 
   if (darkTheme == "light") {
     document.body.classList.remove("dark");
@@ -47,6 +48,8 @@ function App() {
     ActiveSidebar,
     deAktiveSidebar,
     setActivePopup,
+    activeSoruCevapSidebar,
+    setActiveSoruCevapSidebar,
   };
 
   return (

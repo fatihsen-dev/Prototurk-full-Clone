@@ -9,7 +9,7 @@ function LiItem({ text, location, name }) {
     <li className='flex'>
       <NavLink
         onClick={deAktiveSidebar}
-        className={`${name} px-3 w-full py-[6px] rounded-[3px] font-medium transition-colors cursor-pointer select-none text-[15px] text-black dark:text-white`}
+        className={`${name} px-3 w-full py-[6px] rounded-[3px] font-medium transition-colors cursor-pointer select-none text-[15px] text-black dark:text-white whitespace-nowrap`}
         to={`${location}`}
       >
         {text}

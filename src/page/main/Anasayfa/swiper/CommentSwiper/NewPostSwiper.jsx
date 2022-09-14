@@ -1,11 +1,11 @@
 import React from "react";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination } from "swiper";
+import {Swiper, SwiperSlide} from "swiper/react";
+import {Pagination} from "swiper";
 import "swiper/css";
 import "swiper/css/pagination";
 import NewPostSwiperItem from "./NewPostSwiperItem";
 
-function NewPostSwiper() {
+export default function NewPostSwiper() {
   return (
     <Swiper
       slidesPerView={1}
@@ -45,8 +45,7 @@ function NewPostSwiper() {
         },
       }}
       modules={[Pagination]}
-      className='mySwiper w-full mt-5  !pb-10 mb-7'
-    >
+      className='mySwiper w-full mt-5  !pb-10 mb-7'>
       <SwiperSlide>
         <NewPostSwiperItem
           userName='fatih'
@@ -92,5 +91,3 @@ function NewPostSwiper() {
     </Swiper>
   );
 }
-
-export default NewPostSwiper;

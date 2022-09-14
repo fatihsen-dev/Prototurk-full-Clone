@@ -137,7 +137,7 @@ function Sidebar() {
               location='populer-sorular'
               text='Popüler'
             />
-            <hr className="my-3 border-black/5 dark:border-white/10"/>
+            <hr className='my-3 border-black/5 dark:border-white/10' />
             <LiItem
               name='all-sidebar-item home-page-list-item'
               location='takip-ettigim-sorular'
@@ -152,8 +152,8 @@ function Sidebar() {
         </div>
       )}
       <div className='flex flex-col'>
-        <button className='bg-mainGray p-2 mx-1 rounded font-medium text-white flex justify-center items-center'>
-          Uyhulamayı Yükle
+        <button className='bg-mainGray p-2 mx-1 rounded font-medium text-white flex justify-center items-center dark:bg-mainBlue'>
+          Uygulamayı Yükle
         </button>
         <button
           onClick={themeBtnFn}

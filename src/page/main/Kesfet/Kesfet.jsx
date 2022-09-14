@@ -4,7 +4,7 @@ import { useContext } from "react";
 import mainContext from "../../../context/mainContext";
 
 function Kesfet() {
-  const { setActivePopup } = useContext(mainContext);
+  const { setActiveKesfetPopup } = useContext(mainContext);
 
   useEffect(() => {
     document.title = "Keşfet | PROTOTURK";
@@ -26,7 +26,7 @@ function Kesfet() {
             hazırsan maceraya başlıyoruz!
           </p>
           <button
-            onClick={() => setActivePopup(true)}
+            onClick={() => setActiveKesfetPopup(true)}
             className='bg-mainGray dark:bg-mainBlue text-white font-medium rounded py-2 px-4'
           >
             Link Paylaş

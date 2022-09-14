@@ -14,7 +14,6 @@ function Posts() {
           key={index}
           className='flex flex-col items-start border dark:border-darkBorder p-4 rounded-sm gap-3 hover:border-[#d1dce9] dark:hover:border-[#4b4c4d]'
         >
-          {console.log(data)}
           <div
             className='font-bold text-sm px-3 py-1.5 flex justify-center items-center rounded'
             style={

@@ -216,5 +216,22 @@ body.dark .langSwiper {
 
 //***********************************************
 
-.soru-cevap-list-item{
+.soru-cevap-list-item {
+}
+
+//***********************************************
+
+.ders-post-btn {
+  @apply transition-colors;
+  & > svg {
+    @apply rounded-lg p-0.5 box-content;
+  }
+  &:hover {
+    & > svg {
+      @apply bg-green-200/70;
+    }
+    & > span {
+      @apply -top-7 opacity-100;
+    }
+  }
 }

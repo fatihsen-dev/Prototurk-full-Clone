@@ -1,6 +1,9 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useContext } from "react";
+import Post from "./Post";
+import mainContext from "../../../context/mainContext";
 
 function DersIstekleri() {
+  const { setAactiveDersIstekleriPopup } = useContext(mainContext);
   useEffect(() => {
     document.title = "Ders İstekleri | PROTOTURK";
   }, []);
@@ -12,7 +15,7 @@ function DersIstekleri() {
             Ders istekleri
           </h1>
           <div className='flex flex-col gap-4 items-start dark:bg-darkBlueTwo dark:text-white bg-gray-100 p-5 mt-5 relative mb-6'>
-            <p className='dark:z-[2]'>
+            <p className='dark:z-[2] text-sm 2xl:text-base xl:text-base lg:text-base md:text-sm sm:text-sm'>
               Merak ettiğiniz ve öğrenmek istediğiniz ancak yeterli kaynağın
               olmadığı ya da olan kaynakların yeterli gelmediği, ya da dil
               probleminden dolayı anlamakta zorluk çektiğiniz konularda bizlere
@@ -27,13 +30,14 @@ function DersIstekleri() {
               adresinden ulaşırlar, kim bilir!
             </p>
             <button
-              onClick={() => setActivePopup(true)}
+              onClick={() => setAactiveDersIstekleriPopup(true)}
               className='bg-mainGray dark:bg-mainBlue text-white font-medium rounded py-2 px-4'
             >
               Ders İsteğinde Bulun
             </button>
             <span className='flex w-10 h-10 bg-gray-100 left-0 top-1 absolute -skew-x-[45deg] rotate-[90deg] -z-10 dark:bg-darkBlueTwo dark:z-[1]'></span>
           </div>
+          <Post />
         </div>
       </div>
     </div>

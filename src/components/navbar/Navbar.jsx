@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 import mainContext from "../../context/mainContext";
 
 function Navbar() {
-  const { ActiveSidebar } = useContext(mainContext);
+  const { ActiveSidebar, setLoginPage } = useContext(mainContext);
 
   return (
     <div className='bg-white dark:bg-dark dark:border-darkBorder h-[60px] flex items-center justify-between px-5 border-b border-gray-100'>
@@ -33,7 +33,10 @@ function Navbar() {
         />
       </div>
       <div>
-        <button className='text-white rounded font-medium place-content-center'>
+        <button
+          onClick={() => setLoginPage(true)}
+          className='text-white rounded font-medium place-content-center'
+        >
           <span className='bg-mainGray dark:bg-mainBlue rounded px-5 hidden place-content-center 2xl:grid xl:grid lg:grid md:hidden sm:hidden py-2'>
             Giriş yap
           </span>

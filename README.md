@@ -1,6 +1,6 @@
 # Prototurk-full-Clone
 
-## [Live Demo](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status)
+## [Live Demo](prototurk-full-clone.netlify.app)
 
 ## install 
 `

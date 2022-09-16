@@ -1,11 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css");
-
-//***********************************************
-
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "./tailwind.css";
 
 //***********************************************
 
@@ -20,7 +15,7 @@
 html,
 body,
 #root {
-  @apply h-full;
+  height: 100%;
 }
 
 //***********************************************
@@ -37,11 +32,15 @@ body,
 }
 ::-webkit-scrollbar-track {
   background: #edf2f7;
-  @apply dark:bg-[#242526];
+}
+body.dark ::-webkit-scrollbar-track {
+  background-color: #242526;
 }
 ::-webkit-scrollbar-thumb {
   background: #d4dfeb;
-  @apply dark:bg-[#353738];
+}
+body.dark ::-webkit-scrollbar-thumb {
+  background-color: #353738;
 }
 ::-webkit-scrollbar-thumb:hover {
   background: #a0aec0;
@@ -51,14 +50,15 @@ body,
 
 .swiper-pagination-bullet-active {
   background-color: #32445a !important;
-  @apply dark:bg-mainBlue #{!important};
+}
+body.dark .swiper-pagination-bullet-active {
+  background-color: #2d88ff !important;
 }
 
 //***********************************************
 
 .home-page-list-item.active {
   background-color: rgba(243, 244, 244, 0.7);
-  color: #32445a;
 }
 .home-page-list-item:hover {
   background-color: rgba(243, 244, 244, 0.7);
@@ -86,57 +86,57 @@ body.dark .sidebar-language-list-item:hover {
     background-color: rgba(243, 244, 244, 0.7);
   }
   &.html.active {
-    @apply bg-html/20 text-html #{!important};
+    @apply bg-html/20 text-html;
   }
   &.css.active {
-    @apply bg-css/20 text-css #{!important};
+    @apply bg-css/20 text-css;
   }
   &.javascript.active {
-    @apply bg-javascript/20 text-javascript #{!important};
+    @apply bg-javascript/20 text-javascript;
   }
   &.php.active {
-    @apply bg-php/20 text-php #{!important};
+    @apply bg-php/20 text-php;
   }
   &.mysql.active {
-    @apply bg-mysql/20 text-mysql #{!important};
+    @apply bg-mysql/20 text-mysql;
   }
   &.laravel.active {
-    @apply bg-laravel/20 text-laravel #{!important};
+    @apply bg-laravel/20 text-laravel;
   }
   &.python.active {
-    @apply bg-python/20 text-python #{!important};
+    @apply bg-python/20 text-python;
   }
   &.git.active {
-    @apply bg-git/20 text-git #{!important};
+    @apply bg-git/20 text-git;
   }
 }
 body.dark .sidebar-language-list-item {
   &.active {
-    @apply text-white #{!important};
+    color: #ffffff !important;
   }
   &.html.active {
-    @apply bg-html/20 #{!important};
+    background-color: rgba(229, 77, 39, 0.2) !important;
   }
   &.css.active {
-    @apply bg-css/20 #{!important};
+    background-color: rgba(41, 164, 217, 0.2) !important;
   }
   &.javascript.active {
-    @apply bg-javascript/20 #{!important};
+    background-color: rgba(247, 223, 30, 0.2) !important;
   }
   &.php.active {
-    @apply bg-php/20 #{!important};
+    background-color: rgba(116, 120, 174, 0.2) !important;
   }
   &.mysql.active {
-    @apply bg-mysql/20 #{!important};
+    background-color: rgba(68, 121, 161, 0.2) !important;
   }
   &.laravel.active {
-    @apply bg-laravel/20 #{!important};
+    background-color: rgba(255, 45, 32, 0.2) !important;
   }
   &.python.active {
-    @apply bg-python/20 #{!important};
+    background-color: rgba(51, 114, 165, 0.2) !important;
   }
   &.git.active {
-    @apply bg-git/20 #{!important};
+    background-color: rgba(247, 78, 40, 0.2) !important;
   }
 }
 
@@ -144,15 +144,21 @@ body.dark .sidebar-language-list-item {
 
 .akis-navbabar {
   & > a {
-    @apply my-4 border-b-4 border-transparent pb-[5px] transition-colors;
+    margin: 20px 0;
+    border-color: transparent;
+    padding-bottom: 5px !important;
+    border-bottom: 4px solid transparent !important;
+    transition: 150ms;
     &.active {
-      @apply border-b-mainGray text-mainGray;
+      border-bottom-color: #32445a !important;
+      color: #32445a !important;
     }
   }
 }
 body.dark .akis-navbabar {
   & > a.active {
-    @apply border-mainBlue text-mainBlue;
+    border-bottom-color: #2d88ff !important;
+    color: #2d88ff !important;
   }
 }
 
@@ -160,28 +166,28 @@ body.dark .akis-navbabar {
 
 body.dark .langSwiper {
   .html {
-    @apply bg-html/20 #{!important};
+    background-color: rgba(229, 77, 39, 0.2) !important;
   }
   .css {
-    @apply bg-css/20 #{!important};
+    background-color: rgba(41, 164, 217, 0.2) !important;
   }
   .javascript {
-    @apply bg-javascript/20 #{!important};
+    background-color: rgba(247, 223, 30, 0.2) !important;
   }
   .php {
-    @apply bg-php/20 #{!important};
+    background-color: rgba(116, 120, 174, 0.2) !important;
   }
   .mysql {
-    @apply bg-mysql/20 #{!important};
+    background-color: rgba(68, 121, 161, 0.2) !important;
   }
   .laravel {
-    @apply bg-laravel/20 #{!important};
+    background-color: rgba(255, 45, 32, 0.2) !important;
   }
   .python {
-    @apply bg-python/20 #{!important};
+    background-color: rgba(51, 114, 165, 0.2) !important;
   }
   .git {
-    @apply bg-git/20 #{!important};
+    background-color: rgba(247, 78, 40, 0.2) !important;
   }
 }
 
@@ -189,49 +195,53 @@ body.dark .langSwiper {
 
 .lang-headerText {
   &.html {
-    @apply bg-html text-white;
+    color: #fff;
+    background-color: rgba(229, 77, 39, 1) !important;
   }
   &.css {
-    @apply bg-css text-white;
+    color: #fff;
+    background-color: rgba(41, 164, 217, 1) !important;
   }
   &.javascript {
-    @apply bg-javascript text-black;
+    color: #000;
+    background-color: rgba(247, 223, 30, 1) !important;
   }
   &.php {
-    @apply bg-php text-white;
+    color: #fff;
+    background-color: rgba(116, 120, 174, 1) !important;
   }
   &.mysql {
-    @apply bg-mysql text-white;
+    color: #fff;
+    background-color: rgba(68, 121, 161, 1) !important;
   }
   &.laravel {
-    @apply bg-laravel text-white;
+    color: #fff;
+    background-color: rgba(255, 45, 32, 1) !important;
   }
   &.python {
-    @apply bg-python text-white;
+    color: #fff;
+    background-color: rgba(51, 114, 165, 1) !important;
   }
   &.git {
-    @apply bg-git text-white;
+    color: #fff;
+    background-color: rgba(247, 78, 40, 1) !important;
   }
 }
 
-//***********************************************
-
-.soru-cevap-list-item {
-}
-
-//***********************************************
-
 .ders-post-btn {
-  @apply transition-colors;
+  transition: 150ms;
   & > svg {
-    @apply rounded-lg p-0.5 box-content;
+    box-sizing: content-box;
+    padding: 2px;
+    border-radius: 8px;
   }
   &:hover {
     & > svg {
-      @apply bg-green-200/70;
+      background-color: rgba(237, 247, 237, 0.7);
     }
     & > span {
-      @apply -top-7 opacity-100;
+      top: -28px;
+      opacity: 1;
     }
   }
 }

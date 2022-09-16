@@ -1,6 +1,6 @@
 # Prototurk-full-Clone
 
-## [Live Demo](https://prototurk-full-clone.netlify.app/)
+## [Live Demo](https://prototurk-full-clone.vercel.app/)
 
 ## install 
 `

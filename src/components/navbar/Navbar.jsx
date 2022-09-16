@@ -1,16 +1,15 @@
-import React, { useEffect, useContext } from "react";
-import { NavLink } from "react-router-dom";
+import React, {useContext} from "react";
+import {NavLink} from "react-router-dom";
 import mainContext from "../../context/mainContext";
 
 function Navbar() {
-  const { ActiveSidebar, setLoginPage } = useContext(mainContext);
+  const {ActiveSidebar, setLoginPage} = useContext(mainContext);
 
   return (
     <div className='bg-white dark:bg-dark dark:border-darkBorder h-[60px] flex items-center justify-between px-5 border-b border-gray-100'>
       <button
         onClick={ActiveSidebar}
-        className='flex 2xl:hidden xl:hidden lg:hidden md:flex sm:flex'
-      >
+        className='flex 2xl:hidden xl:hidden lg:hidden md:flex sm:flex'>
         <i className='fa-solid fa-bars text-mainGray dark:text-mainBlue text-xl'></i>
       </button>
       <NavLink to='/' className='flex gap-[6px] items-end'>
@@ -35,8 +34,7 @@ function Navbar() {
       <div>
         <button
           onClick={() => setLoginPage(true)}
-          className='text-white rounded font-medium place-content-center'
-        >
+          className='text-white rounded font-medium place-content-center'>
           <span className='bg-mainGray dark:bg-mainBlue rounded px-5 hidden place-content-center 2xl:grid xl:grid lg:grid md:hidden sm:hidden py-2'>
             Giriş yap
           </span>

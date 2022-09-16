@@ -1,9 +1,9 @@
 import React from "react";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination } from "swiper";
+import {Swiper, SwiperSlide} from "swiper/react";
+import {Pagination} from "swiper";
 import "swiper/css";
 import "swiper/css/pagination";
-import SorularItem from "./SorularItem";
+import SorularItem from "./sorularItem";
 
 function Sorular() {
   return (
@@ -45,8 +45,7 @@ function Sorular() {
         },
       }}
       modules={[Pagination]}
-      className='mySwiper w-full mt-5  !pb-10 mb-7'
-    >
+      className='mySwiper w-full mt-5  !pb-10 mb-7'>
       <SwiperSlide>
         <SorularItem />
       </SwiperSlide>

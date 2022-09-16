@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from "react";
+import React, {useState} from "react";
 import "./index.scss";
 import Navbar from "./components/navbar/Navbar";
 import Main from "./components/Main";
@@ -30,25 +30,27 @@ function App() {
   const [activeSoruCevapSidebar, setActiveSoruCevapSidebar] = useState(false);
 
   // set dark,light theme
-  if (darkTheme == "light") {
+  if (darkTheme === "light") {
     document.body.classList.remove("dark");
     document.body.classList.add("light");
-  } else if (darkTheme == "dark") {
+  } else if (darkTheme === "dark") {
     document.body.classList.remove("light");
     document.body.classList.add("dark");
   }
-
   // active,deActive sidebar
   const ActiveSidebar = () => {
-    activeSidebar == "active"
-      ? (setActiveSidebar("deActive"),
-        setStyle({
-          width: "100%",
-          zIndex: "10",
-          display: "flex",
-          position: "absolute",
-        }))
-      : (setActiveSidebar("active"), setStyle({}));
+    if (activeSidebar === "active") {
+      setActiveSidebar("deActive");
+      setStyle({
+        width: "100%",
+        zIndex: "10",
+        display: "flex",
+        position: "absolute",
+      });
+    } else {
+      setActiveSidebar("active");
+      setStyle({});
+    }
   };
   const deAktiveSidebar = () => {
     setActiveSidebar("active");

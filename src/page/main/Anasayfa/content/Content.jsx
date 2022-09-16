@@ -1,7 +1,7 @@
-import React, { useEffect, useContext } from "react";
+import React, {useEffect, useContext} from "react";
 import mainContext from "../../../../context/mainContext";
 import LangSwiper from "../swiper/langSwiper/LangSwiper";
-import NewPostSwiper from "../swiper/commentSwiper/NewPostSwiper";
+import NewPostSwiper from "../swiper/CommentSwiper/NewPostSwiper";
 import NewEducation from "../swiper/NewEducation/NewEducation";
 import NewUsers from "../swiper/NewUsers/NewUsers";
 import HeaderText from "../HeaderText/HeaderText";
@@ -10,7 +10,7 @@ import Twitter from "../social/Twitter";
 import Telegram from "../social/Telegram";
 
 function Content() {
-  const { setActiveSoruCevapSidebar } = useContext(mainContext);
+  const {setActiveSoruCevapSidebar} = useContext(mainContext);
   useEffect(() => {
     document.title = "𝗣𝗥𝗢𝗧𝗢𝗧𝗨𝗥𝗞 | Yazılım ve Tasarım Dersleri";
     setActiveSoruCevapSidebar(false);
